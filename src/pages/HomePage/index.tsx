@@ -2,7 +2,7 @@ import React from 'react'
 
 import Navbar from './Navbar';
 import Banner from './Banner';
-import Carousel from './Carousel';
+import NewsCarousel from './NewsCarousel';
 import Dashboard from './Dashboard';
 import Footer from './Footer';
 import './style.scss';
@@ -12,7 +12,7 @@ const HomePage = () => {
         <div>
             <Navbar />
             <Banner />
-            <Carousel />
+            <NewsCarousel />
             <Dashboard />
             <Footer />
         </div>
