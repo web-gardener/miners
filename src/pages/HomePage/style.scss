@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: rgba(7, 23, 96, 0.95);
+
+
+    .logo {
+        display: flex;
+        color: white;
+        font-size: 30px;
+
+        .brand,
+        &-img {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand {
+            margin-left: 10px;
+        }
+    }
+
+    .moving-text {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        font-size: 30px;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+    }
+
+}
