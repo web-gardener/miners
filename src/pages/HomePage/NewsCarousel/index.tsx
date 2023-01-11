@@ -53,8 +53,8 @@ const NewsCarousel = () => {
         // </Carousel>
         <div className="carousel">
             <Carousel>
-                {items.map((item) => (
-                    <div className="carousel-item">
+                {items.map((item, key) => (
+                    <div className="carousel-item" key={key}>
                         <div className="heading">
                             <div className="star-icon">
                                 <AiFillStar />
@@ -64,8 +64,8 @@ const NewsCarousel = () => {
                             </div>
                         </div>
                         <div className="list">
-                            {item.list.map((listItem) => (
-                                <div className="list-item">
+                            {item.list.map((listItem, key) => (
+                                <div className="list-item" key={key}>
                                     <div className="title">
                                         <p>
                                             {listItem.title}

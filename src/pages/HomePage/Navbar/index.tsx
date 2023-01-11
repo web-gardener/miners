@@ -66,8 +66,8 @@ const Navbar = () => {
                 </div>
             </div>
             <div className='menu-btn'>
-                <IconButton aria-label="delete" size="large" style={{ color: 'white' }}>
-                    <DehazeIcon fontSize="large" onClick={() => setCollapseMenu(!collapseMenu)} />
+                <IconButton aria-label="delete" size="large" style={{ color: 'white' }} onClick={() => setCollapseMenu(!collapseMenu)} >
+                    <DehazeIcon fontSize="large" />
                 </IconButton>
                 {!collapseMenu &&
                     <div className="dropdown-menu">
