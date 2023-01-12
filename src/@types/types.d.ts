@@ -15,6 +15,8 @@ interface SortableTableData {
     token: 'BNB' | 'USDT' | 'ETH' | 'POOP' | 'BUSD' | 'MATIC',
     age: string,
     tooltip_status: string,
+    fee_in_out: string,
+    sum_fee_in_out: number,
 }
 
 interface Links {

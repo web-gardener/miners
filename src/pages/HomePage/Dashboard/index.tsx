@@ -22,6 +22,8 @@ const Dashboard = () => {
             token: 'ETH',
             age: '1 day',
             tooltip_status: 'Avoid',
+            fee_in_out: "3.5% / 2.5%",
+            sum_fee_in_out: 6,
         },
         {
             id: 2,
@@ -40,6 +42,8 @@ const Dashboard = () => {
             token: 'BNB',
             age: '1 day',
             tooltip_status: '',
+            fee_in_out: "5% / 5%",
+            sum_fee_in_out: 10,
         },
         {
             id: 3,
@@ -58,6 +62,8 @@ const Dashboard = () => {
             token: 'BNB',
             age: '1 day',
             tooltip_status: 'Scam',
+            fee_in_out: "4% / 4%",
+            sum_fee_in_out: 8,
         },
         // {
         //     id: 4,

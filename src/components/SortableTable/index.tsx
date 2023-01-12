@@ -116,6 +116,17 @@ const SortableTable = (props: SortableTablePorps) => {
                         <th>
                             <button
                                 type="button"
+                                onClick={() => requestSort('sum_fee_in_out')}
+                                className={getClassNamesFor('sum_fee_in_out')}
+                            >
+                                Fees
+                                {(getClassNamesFor('sum_fee_in_out') === "ascending") && "↑"}
+                                {(getClassNamesFor('sum_fee_in_out') === "descending" || getClassNamesFor('sum_fee_in_out') === undefined) && "↓"}
+                            </button>
+                        </th>
+                        <th>
+                            <button
+                                type="button"
                                 onClick={() => requestSort('stock')}
                                 className={getClassNamesFor('stock')}
                             >
@@ -169,6 +180,9 @@ const SortableTable = (props: SortableTablePorps) => {
                                         </Tooltip>
                                     </a>
                                 </div>
+                            </td>
+                            <td>
+                                {item.fee_in_out}
                             </td>
                             <td>{item.stock}</td>
                         </tr>
