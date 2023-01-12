@@ -17,7 +17,8 @@ const Dashboard = () => {
                 contract: "/",
                 chart: "/",
                 telegram: "/",
-            }
+            },
+            token: 'ETH',
         },
         {
             id: 2,
@@ -31,7 +32,8 @@ const Dashboard = () => {
                 contract: "/",
                 chart: "/",
                 telegram: "/",
-            }
+            },
+            token: 'BNB',
         },
         {
             id: 3,
@@ -45,7 +47,8 @@ const Dashboard = () => {
                 contract: "/",
                 chart: "/",
                 telegram: "/",
-            }
+            },
+            token: 'BNB',
         },
         {
             id: 4,
@@ -59,7 +62,8 @@ const Dashboard = () => {
                 contract: "/",
                 chart: "/",
                 telegram: "/",
-            }
+            },
+            token: 'BNB',
         },
         {
             id: 5,
@@ -73,7 +77,8 @@ const Dashboard = () => {
                 contract: "/",
                 chart: "/",
                 telegram: "/",
-            }
+            },
+            token: 'BNB',
         },
         {
             id: 6,
@@ -87,7 +92,8 @@ const Dashboard = () => {
                 contract: "/",
                 chart: "/",
                 telegram: "/",
-            }
+            },
+            token: 'BNB',
         },
         {
             id: 7,
@@ -101,7 +107,8 @@ const Dashboard = () => {
                 contract: "/",
                 chart: "/",
                 telegram: "/",
-            }
+            },
+            token: 'BNB',
         },
     ];
     return (

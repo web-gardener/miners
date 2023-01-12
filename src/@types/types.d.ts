@@ -11,6 +11,7 @@ interface SortableTableData {
     stock: number,
     chain: 'BSC' | 'ETH' | 'POLYGON' | 'POOCHAIN',
     link: Links
+    token: 'BNB' | 'USDT' | 'ETH' | 'POOP' | 'BUSD' | 'MATIC',
 }
 
 interface Links {

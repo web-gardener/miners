@@ -3,7 +3,25 @@ import Chip from '@mui/material/Chip';
 import DAppImg from '../../assets/image/dapp.png';
 import BSCScanChartImg from '../../assets/image/bscscan_chart.svg';
 import TelegramImg from '../../assets/image/telegram-icon.svg';
+import Tooltip from '@mui/material/Tooltip';
 import './style.scss';
+
+
+const tokenLinks = {
+    BNB: 'https://poocoin.app/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    BUSD: 'https://poocoin.app/tokens/0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    ETH: 'https://dexscreener.com/ethereum/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+    MATIC: 'https://dexscreener.com/polygon/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+    POOP: 'https://poocoin.app/tokens/0xa1611e8d4070dee36ef308952cf34255c92a01c5',
+    USDT: 'https://poocoin.app/tokens/0x55d398326f99059ff775485246999027b3197955',
+};
+
+const chainLinks = {
+    BSC: 'https://www.bnbchain.org/en',
+    ETH: 'https://ethereum.org/en',
+    POLYGON: 'https://polygon.technology/',
+    POOCHAIN: 'https://www.poochain.co/',
+}
 
 const useSortableData = (items: SortableTableData[], config?: SortConfig) => {
     const [sortConfig, setSortConfig] = React.useState<SortConfig | undefined>(config);
@@ -85,6 +103,9 @@ const SortableTable = (props: SortableTablePorps) => {
                             Links
                         </th>
                         <th>
+                            Token
+                        </th>
+                        <th>
                             <button
                                 type="button"
                                 onClick={() => requestSort('stock')}
@@ -118,6 +139,20 @@ const SortableTable = (props: SortableTablePorps) => {
                                     </a>
                                     <a href={item.link.telegram} className="link-item">
                                         <img src={TelegramImg} alt="dapp-link" width={20} height={20} />
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="tokens">
+                                    <a className='chain' href={chainLinks[item.chain]}>
+                                        <Tooltip title={`Chain ${item.chain}`} placement="top" arrow>
+                                            <img src={`${item.chain}_CHAIN.png`} width={20} alt='chain' />
+                                        </Tooltip>
+                                    </a>
+                                    <a className="token" href={tokenLinks[item.token]}>
+                                        <Tooltip title={`${item.token}`} placement="top" arrow>
+                                            <img src={`${item.token}_TOKEN.png`} width={20} alt='token' />
+                                        </Tooltip>
                                     </a>
                                 </div>
                             </td>
