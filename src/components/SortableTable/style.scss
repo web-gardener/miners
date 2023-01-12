@@ -1,0 +1,53 @@
+.sortable-table {
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th {
+            text-align: left;
+            border-bottom: 2px solid black;
+        }
+
+        button {
+            border: 0;
+            border-radius: none;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: inherit;
+            padding: 0.5em;
+            margin-bottom: 1px;
+        }
+
+        thead {
+            button.ascending::after {
+                display: inline-block;
+            }
+
+            button.descending::after {
+                display: inline-block;
+            }
+        }
+
+        tbody {
+            td {
+                padding: 0.5em;
+                border-bottom: 1px solid #ccc;
+            }
+
+            tr:hover {
+                background-color: #eee;
+            }
+
+            .links {
+                display: flex;
+                margin-top: 5px;
+
+                .link-item {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
