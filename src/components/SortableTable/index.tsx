@@ -103,7 +103,15 @@ const SortableTable = (props: SortableTablePorps) => {
                             Links
                         </th>
                         <th>
-                            Token
+                            <button
+                                type="button"
+                                onClick={() => requestSort('token')}
+                                className={getClassNamesFor('token')}
+                            >
+                                Token
+                                {(getClassNamesFor('token') === "ascending") && "↑"}
+                                {(getClassNamesFor('token') === "descending" || getClassNamesFor('token') === undefined) && "↓"}
+                            </button>
                         </th>
                         <th>
                             <button
