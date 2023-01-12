@@ -4,17 +4,29 @@ import Navbar from './Navbar';
 import Banner from './Banner';
 import NewsCarousel from './NewsCarousel';
 import Dashboard from './Dashboard';
-import Footer from './Footer';
+import Footer from '../../components/Footer';
 import './style.scss';
 
 const HomePage = () => {
     return (
-        <div>
-            <Navbar />
-            <Banner />
-            <NewsCarousel />
-            <Dashboard />
-            <Footer />
+        <div className="homepage">
+            <div className="navbar-field">
+                <Navbar />
+            </div>
+            <div className="main-field">
+                <div className="banner-field">
+                    <Banner />
+                </div>
+                <div className="news-carousel-field">
+                    <NewsCarousel />
+                </div>
+                <div className="dashboard-field">
+                    <Dashboard />
+                </div>
+            </div>
+            <div className='footer-field'>
+                <Footer />
+            </div>
         </div>
     );
 }

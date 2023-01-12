@@ -6,12 +6,12 @@ import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import TelegramIcon from '../../../assets/image/telegram-icon.svg';
-import BinanceImg from '../../../assets/image/binance.png';
-import EthereumImg from '../../../assets/image/ethereum.png';
-import AvalancheImg from '../../../assets/image/avalanche.png';
-import PolygonImg from '../../../assets/image/polygon.png';
-import PoochainImg from '../../../assets/image/poochain.png';
+import TelegramIcon from '../../assets/image/telegram-icon.svg';
+import BinanceImg from '../../assets/image/binance.png';
+import EthereumImg from '../../assets/image/ethereum.png';
+import AvalancheImg from '../../assets/image/avalanche.png';
+import PolygonImg from '../../assets/image/polygon.png';
+import PoochainImg from '../../assets/image/poochain.png';
 import './style.scss';
 
 const style = {
