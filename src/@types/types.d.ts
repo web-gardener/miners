@@ -8,10 +8,13 @@ interface SortableTableData {
     name: string,
     status: "avoid" | "active" | "scam" | "new" | "over" | "warning",
     tvl: number,
+    tvl_usd: number,
     stock: number,
     chain: 'BSC' | 'ETH' | 'POLYGON' | 'POOCHAIN',
     link: Links
     token: 'BNB' | 'USDT' | 'ETH' | 'POOP' | 'BUSD' | 'MATIC',
+    age: string,
+    tooltip_status: string,
 }
 
 interface Links {

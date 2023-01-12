@@ -4,8 +4,8 @@ import DAppImg from '../../assets/image/dapp.png';
 import BSCScanChartImg from '../../assets/image/bscscan_chart.svg';
 import TelegramImg from '../../assets/image/telegram-icon.svg';
 import Tooltip from '@mui/material/Tooltip';
+import Button from '@mui/material/Button';
 import './style.scss';
-
 
 const tokenLinks = {
     BNB: 'https://poocoin.app/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
@@ -122,10 +122,16 @@ const SortableTable = (props: SortableTablePorps) => {
                     {items.map((item) => (
                         <tr key={item.id}>
                             <td>{item.name}</td>
-                            <td >
-                                <Chip label={capitalizeFirstLetter(item.status)} style={{ ...style[item.status] }} />
+                            <td>
+                                <Tooltip title={`${item.tooltip_status === "" ? item.age : item.tooltip_status}`} placement="top" arrow>
+                                    <Chip label={capitalizeFirstLetter(item.status)} style={{ ...style[item.status] }} />
+                                </Tooltip>
                             </td>
-                            <td>${item.tvl}</td>
+                            <td>
+                                <Tooltip title={`${item.tvl} ${item.token}`} placement="top" arrow>
+                                    <Button style={{ color: 'black' }}>${item.tvl_usd}</Button>
+                                </Tooltip>
+                            </td>
                             <td>
                                 <div className="links">
                                     <a href={item.link.dapp} className="link-item">
