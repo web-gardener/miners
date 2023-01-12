@@ -36,11 +36,11 @@ const Footer = () => {
     }
     return (
         <div className="footer">
-            <div className="join-us-telegram-btn">
+            <a className="join-us-telegram-btn" href="https://t.me/GoatMiners">
                 <Button variant="contained" endIcon={<img src={TelegramIcon} alt="telegram-icon" width={30} height={30} />} >
-                    <a href="https://t.me/GoatMiners">Join us Telegram</a>
+                    <p>Join us Telegram</p>
                 </Button>
-            </div>
+            </a>
             <div className="partners">
                 <div className="partner-brand">
                     <img src={BinanceImg} alt="biannce-img" width={100} height={28} />

@@ -5,6 +5,7 @@ import BSCScanChartImg from '../../assets/image/bscscan_chart.svg';
 import TelegramImg from '../../assets/image/telegram-icon.svg';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import './style.scss';
 
 const tokenLinks = {
@@ -59,14 +60,40 @@ const useSortableData = (items: SortableTableData[], config?: SortConfig) => {
 
 const SortableTable = (props: SortableTablePorps) => {
     const { items, requestSort, sortConfig } = useSortableData(props.products);
+
     const getClassNamesFor = (name: string) => {
         if (sortConfig === undefined) {
             return;
         }
         return sortConfig.key === name ? sortConfig.direction : undefined;
     };
+
     function capitalizeFirstLetter(string: string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function getPeriod(date: string) {
+        const today = new Date();
+        const created_day = new Date(date);
+        const period = today.getTime() - created_day.getTime();
+        if (period > 0) {
+            if (period < 1000 * 3600 * 24) {
+                let hours = Math.ceil(period / (1000 * 3600));
+                return hours + " hours ago";
+            } else {
+                let days = Math.ceil(period / (1000 * 3600 * 24));
+                return days + " days";
+            }
+        } else {
+            if (-period < 1000 * 3600 * 24) {
+                let hours = Math.ceil(-period / (1000 * 3600));
+                return "in " + hours + " hours";
+            } else {
+                let days = Math.ceil(-period / (1000 * 3600 * 24));
+                return "in " + days + " days";
+            }
+        }
+
     }
     return (
         <div className="sortable-table">
@@ -127,12 +154,45 @@ const SortableTable = (props: SortableTablePorps) => {
                         <th>
                             <button
                                 type="button"
-                                onClick={() => requestSort('stock')}
-                                className={getClassNamesFor('stock')}
+                                onClick={() => requestSort('max_daily')}
+                                className={getClassNamesFor('max_daily')}
                             >
-                                In Stock
-                                {(getClassNamesFor('stock') === "ascending") && "↑"}
-                                {(getClassNamesFor('stock') === "descending" || getClassNamesFor('stock') === undefined) && "↓"}
+                                Daily%
+                                {(getClassNamesFor('max_daily') === "ascending") && "↑"}
+                                {(getClassNamesFor('max_daily') === "descending" || getClassNamesFor('max_daily') === undefined) && "↓"}
+                            </button>
+                        </th>
+                        <th>
+                            <button
+                                type="button"
+                                onClick={() => requestSort('age')}
+                                className={getClassNamesFor('age')}
+                            >
+                                Age
+                                {(getClassNamesFor('age') === "ascending") && "↑"}
+                                {(getClassNamesFor('age') === "descending" || getClassNamesFor('age') === undefined) && "↓"}
+                            </button>
+                        </th>
+                        <th>
+                            <button
+                                type="button"
+                                onClick={() => requestSort('tvl_24h')}
+                                className={getClassNamesFor('tvl_24h')}
+                            >
+                                Tvl 24h
+                                {(getClassNamesFor('tvl_24h') === "ascending") && "↑"}
+                                {(getClassNamesFor('tvl_24h') === "descending" || getClassNamesFor('tvl_24h') === undefined) && "↓"}
+                            </button>
+                        </th>
+                        <th>
+                            <button
+                                type="button"
+                                onClick={() => requestSort('tvl_7d')}
+                                className={getClassNamesFor('tvl_7d')}
+                            >
+                                Tvl 7d
+                                {(getClassNamesFor('tvl_7d') === "ascending") && "↑"}
+                                {(getClassNamesFor('tvl_7d') === "descending" || getClassNamesFor('tvl_7d') === undefined) && "↓"}
                             </button>
                         </th>
                     </tr>
@@ -140,7 +200,11 @@ const SortableTable = (props: SortableTablePorps) => {
                 <tbody>
                     {items.map((item) => (
                         <tr key={item.id}>
-                            <td>{item.name}</td>
+                            <td>
+                                <Tooltip title={`${item.token}`} placement="top" arrow>
+                                    <Button style={{ color: 'black' }}>{item.name}</Button>
+                                </Tooltip>
+                            </td>
                             <td>
                                 <Tooltip title={`${item.tooltip_status === "" ? item.age : item.tooltip_status}`} placement="top" arrow>
                                     <Chip label={capitalizeFirstLetter(item.status)} style={{ ...style[item.status] }} />
@@ -182,9 +246,26 @@ const SortableTable = (props: SortableTablePorps) => {
                                 </div>
                             </td>
                             <td>
-                                {item.fee_in_out}
+                                <Tooltip title={`${item.tooltip_fee_in_out}`} placement="top" arrow>
+                                    <Button style={{ color: 'black' }}>{item.fee_in_out}</Button>
+                                </Tooltip>
                             </td>
-                            <td>{item.stock}</td>
+                            <td>
+                                <Tooltip title={`${item.tooltip_daily}`} placement="top" arrow>
+                                    <Button style={{ color: 'black' }}>{item.daily}</Button>
+                                </Tooltip>
+                            </td>
+                            <td>{getPeriod(item.age)}</td>
+                            <td>
+                                <p className={`${item.tvl_24h > 0 ? "positive" : "negative"}`}>
+                                    {item.tvl_24h}%
+                                </p>
+                            </td>
+                            <td>
+                                <p className={`${item.tvl_7d > 0 ? "positive" : "negative"}`}>
+                                    {item.tvl_7d}%
+                                </p>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

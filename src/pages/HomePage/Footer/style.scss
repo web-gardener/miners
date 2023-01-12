@@ -6,9 +6,9 @@
     .join-us-telegram-btn {
         display: flex;
         justify-content: center;
+        text-decoration: none;
 
-        a {
-            text-decoration: none;
+        p {
             color: #FFF700;
         }
     }

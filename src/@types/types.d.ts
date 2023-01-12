@@ -9,14 +9,19 @@ interface SortableTableData {
     status: "avoid" | "active" | "scam" | "new" | "over" | "warning",
     tvl: number,
     tvl_usd: number,
-    stock: number,
+    tvl_7d: number,
+    tvl_24h: number,
     chain: 'BSC' | 'ETH' | 'POLYGON' | 'POOCHAIN',
     link: Links
     token: 'BNB' | 'USDT' | 'ETH' | 'POOP' | 'BUSD' | 'MATIC',
     age: string,
     tooltip_status: string,
+    tooltip_daily: string,
+    tooltip_fee_in_out: string,
     fee_in_out: string,
     sum_fee_in_out: number,
+    daily: string,
+    max_daily: number,
 }
 
 interface Links {
