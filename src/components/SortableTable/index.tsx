@@ -5,7 +5,9 @@ import BSCScanChartImg from '../../assets/image/bscscan_chart.svg';
 import TelegramImg from '../../assets/image/telegram-icon.svg';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import SafeIcon from '../../assets/image/safety-icon.webp';
+import UnsafeIcon from '../../assets/image/unsafe-icon.svg';
+import InfoIcon from '../../assets/image/info-icon.svg';
 import './style.scss';
 
 const tokenLinks = {
@@ -95,10 +97,10 @@ const SortableTable = (props: SortableTablePorps) => {
         }
 
     }
+
     return (
         <div className="sortable-table">
             <table>
-                <caption>Products</caption>
                 <thead>
                     <tr>
                         <th>
@@ -163,6 +165,9 @@ const SortableTable = (props: SortableTablePorps) => {
                             </button>
                         </th>
                         <th>
+                            Security &<br />Info
+                        </th>
+                        <th>
                             <button
                                 type="button"
                                 onClick={() => requestSort('age')}
@@ -201,8 +206,8 @@ const SortableTable = (props: SortableTablePorps) => {
                     {items.map((item) => (
                         <tr key={item.id}>
                             <td>
-                                <Tooltip title={`${item.token}`} placement="top" arrow>
-                                    <Button style={{ color: 'black' }}>{item.name}</Button>
+                                <Tooltip title="Click for more info" placement="top" arrow>
+                                    <Button style={{ color: 'black', minWidth: '0' }}>{item.name}</Button>
                                 </Tooltip>
                             </td>
                             <td>
@@ -230,8 +235,10 @@ const SortableTable = (props: SortableTablePorps) => {
                                         <img src={TelegramImg} alt="dapp-link" width={20} height={20} />
                                     </a>
                                 </div>
+
                             </td>
                             <td>
+
                                 <div className="tokens">
                                     <a className='chain' href={chainLinks[item.chain]}>
                                         <Tooltip title={`Chain ${item.chain}`} placement="top" arrow>
@@ -254,6 +261,26 @@ const SortableTable = (props: SortableTablePorps) => {
                                 <Tooltip title={`${item.tooltip_daily}`} placement="top" arrow>
                                     <Button style={{ color: 'black' }}>{item.daily}</Button>
                                 </Tooltip>
+                            </td>
+                            <td>
+                                <div className="security-info">
+                                    <div>
+                                        {
+                                            item.audit === "Pending" ?
+                                                (<Tooltip title={`${item.audit}`} placement="left" arrow>
+                                                    <img src={UnsafeIcon} alt='unsafe' width={20} height={20} />
+                                                </Tooltip>)
+                                                : <Tooltip title={`${item.audit}`} placement="left" arrow>
+                                                    <img src={SafeIcon} alt="safe" width={20} height={20} />
+                                                </Tooltip>
+                                        }
+                                    </div>
+                                    <div className="info-icon">
+                                        <Tooltip title={`${item.description}`} placement="left" arrow>
+                                            <img src={InfoIcon} alt="info" width={20} height={20} />
+                                        </Tooltip>
+                                    </div>
+                                </div>
                             </td>
                             <td>{getPeriod(item.age)}</td>
                             <td>

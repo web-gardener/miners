@@ -22,6 +22,8 @@ interface SortableTableData {
     sum_fee_in_out: number,
     daily: string,
     max_daily: number,
+    audit: string,
+    description: string,
 }
 
 interface Links {

@@ -5,7 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(90deg, #9bafd9, #103784);
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 255, .6);
+    border-radius: 12px;
+  }
+
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

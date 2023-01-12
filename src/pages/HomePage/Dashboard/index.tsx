@@ -1,5 +1,6 @@
 import React from 'react'
 import SortableTable from '../../../components/SortableTable';
+import SwipeVerticalIcon from '@mui/icons-material/SwipeVertical';
 
 import './style.scss';
 
@@ -29,6 +30,8 @@ const Dashboard = () => {
             daily: '10%',
             max_daily: 10,
             tvl_24h: -12.55,
+            audit: 'Pending',
+            description: 'description 1',
         },
         {
             id: 2,
@@ -54,6 +57,8 @@ const Dashboard = () => {
             daily: '8.5%',
             max_daily: 8.5,
             tvl_24h: +3.66,
+            audit: 'Audit 1',
+            description: 'description 2',
         },
         {
             id: 3,
@@ -79,6 +84,8 @@ const Dashboard = () => {
             daily: '15%',
             max_daily: 15,
             tvl_24h: -15,
+            audit: 'Audit 3',
+            description: 'description 3',
         },
         // {
         //     id: 4,
@@ -150,10 +157,21 @@ const Dashboard = () => {
         // },
     ];
     return (
-        <div>
-            <SortableTable
-                products={products}
-            />
+        <div className="dashboard">
+            <div>
+                <h1>ROI Dapps/Miners</h1>
+            </div>
+            <div>
+                <hr></hr>
+            </div>
+            <div>
+                <SortableTable
+                    products={products}
+                />
+            </div>
+            <div>
+                <h2>Loaded {products.length} projects <SwipeVerticalIcon /></h2>
+            </div>
         </div>
     );
 }
