@@ -68,7 +68,7 @@ interface DetailDataProps {
     data: DetailData
 }
 
-interface PriceChatDataProps {
+interface PriceChartDataProps {
     name: string
 }
 
@@ -104,3 +104,36 @@ interface DashboardData {
     tvl_7d: number,
     tvl_24h: number
 }
+
+// DAppData Api Response
+interface DAppDataResponse {
+    added: string,
+    age: string,
+    audit: string,
+    chain: string,
+    daily: string,
+    dapp_link: string,
+    description: string,
+    description_detail: string | null,
+    fee_in_out: string,
+    link_contract: string,
+    position: number,
+    referrer: string,
+    tg_group: string,
+    token: string,
+    tvl: number,
+    tvl_7d: number,
+    tvl_24h: number,
+    tvl_usd: number,
+}
+
+// Chart Data 
+interface ChartAPIResponseData {
+    tvl: number,
+    date: string,
+}
+interface ChartData {
+    name: string,
+    data: number[][],
+}
+
