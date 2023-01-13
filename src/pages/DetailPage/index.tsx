@@ -2,9 +2,7 @@ import React from 'react';
 import DAppData from './DAppData';
 import PriceChart from './PriceChart';
 import Details from './Details';
-import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import './style.scss';
 
 const DetailPage = () => {
