@@ -25,6 +25,11 @@ const DetailPage = () => {
             telegram: "/",
         },
     });
+    const [detailData, setDetailData] = useState<DetailData>({
+        name: "Solar Kingdom",
+        description: "Beautiful dApp by the Solar Farm team. This is a fork of Baked Beans v2 with many additions. Boost your daily ROI (uo ti 7.5%) by referring people. Anti-whale mechanisms: - Maximum deposit - Accumulation cut-off - Penalties for early withdrawal and more. Solar Frenzy game: Reward pool in which last person to deposit before countdown reaches 0 will 70% of the jackpot! The remaining 30% will be won for the user who made the biggest investment since last Solar Frenzy. Note this is a proxy contract which entails additional risks.",
+        added: "January 10, 2023 5: 30 PM"
+    })
     return (
         <div className="detail-page">
             <Grid container>
@@ -36,7 +41,7 @@ const DetailPage = () => {
                 </Grid>
             </Grid >
             <div className="details-field">
-                <Details />
+                <Details data={detailData} />
             </div>
         </div>
     );

@@ -40,9 +40,6 @@ interface SortConfig {
 
 // Detail Page
 
-interface DAppDataProps {
-    data: DAppData
-}
 interface DAppData {
     name: string,
     chain: string,
@@ -56,4 +53,18 @@ interface DAppData {
     ref: string,
     update: string,
     links: Links,
+}
+
+interface DAppDataProps {
+    data: DAppData
+}
+
+interface DetailData {
+    name: string,
+    description: string,
+    added: string,
+}
+
+interface DetailDataProps {
+    data: DetailData
 }

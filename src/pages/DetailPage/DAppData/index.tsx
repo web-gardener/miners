@@ -79,14 +79,14 @@ const DAppData = (props: DAppDataProps) => {
                     </Grid>
                     <Grid xs={6} md={4} style={{ marginTop: 5 }} display={'flex'} justifyContent={"center"}>
                         <a className="data-btn" href={props.data.links.contract}>
-                            <Button variant="contained" endIcon={<img src={`BSC_CHAIN.png`} alt="telegram-icon" width={30} height={30} />} style={{ width: 150 }}>
+                            <Button variant="contained" endIcon={<img src={`${props.data.chain}_CHAIN.png`} alt="telegram-icon" width={30} height={30} />} style={{ width: 150 }}>
                                 <p>CONTRACT</p>
                             </Button>
                         </a>
                     </Grid>
                     <Grid xs={6} md={4} style={{ marginTop: 5 }} display={'flex'} justifyContent={"center"}>
                         <a className="data-btn" href={props.data.links.chart}>
-                            <Button variant="contained" endIcon={<img src={`BUSD_TOKEN.png`} alt="telegram-icon" width={30} height={30} />} style={{ width: 150 }}>
+                            <Button variant="contained" endIcon={<img src={`${props.data.token}_TOKEN.png`} alt="telegram-icon" width={30} height={30} />} style={{ width: 150 }}>
                                 <p>TOKEN</p>
                             </Button>
                         </a>
