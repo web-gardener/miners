@@ -355,8 +355,8 @@ const PriceChart = () => {
     }];
 
     return (
-        <div className='price-chart' style={{ textAlign: "center", }}>
-            <ReactApexChart options={options} series={series} type="area" height={320} />
+        <div className='price-chart' style={{ textAlign: "center", height: 465 }}>
+            <ReactApexChart options={options} series={series} type="area" height="100%" width="100%" />
         </div>
     );
 }

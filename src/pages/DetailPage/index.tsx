@@ -2,14 +2,25 @@ import React from 'react';
 import DAppData from './DAppData';
 import PriceChart from './PriceChart';
 import Details from './Details';
+import Stack from '@mui/material/Stack';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import './style.scss';
 
 const DetailPage = () => {
     return (
-        <div>
-            <DAppData />
-            <PriceChart />
-            <Details />
+        <div className="detail-page">
+            <Grid container>
+                <Grid xs={12} md={6} style={{ padding: 10 }}>
+                    <DAppData />
+                </Grid>
+                <Grid xs={12} md={6} style={{ padding: 10 }}>
+                    <PriceChart />
+                </Grid>
+            </Grid >
+            <div className="details-field">
+                <Details />
+            </div>
         </div>
     );
 }

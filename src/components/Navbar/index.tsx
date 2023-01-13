@@ -17,7 +17,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import ErrorIcon from '@mui/icons-material/Error';
 
-import LogoImg from '../../../assets/image/logo.png';
+import LogoImg from '../../assets/image/logo.png';
 import './style.scss';
 
 const modal_style = {

@@ -13,10 +13,10 @@ const Details = () => {
             </div>
             <div className="images">
                 <div>
-                    <img src={"https://goatminers.com/screenshots/ETH%20Machine/desktop-medium.jpg"} alt='desktop-medium' />
+                    <img src={"https://goatminers.com/screenshots/ETH%20Machine/desktop-medium.jpg"} alt='desktop-medium' height={265} />
                 </div>
                 <div>
-                    <img src={"https://goatminers.com/screenshots/ETH%20Machine/mobile-medium.jpg"} alt='desktop-medium' />
+                    <img src={"https://goatminers.com/screenshots/ETH%20Machine/mobile-medium.jpg"} alt='desktop-medium' height={265} />
                 </div>
             </div>
             <div className="description">
