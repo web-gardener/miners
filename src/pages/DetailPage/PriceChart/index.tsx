@@ -4,7 +4,7 @@ import { ApexOptions } from 'apexcharts';
 
 import './style.scss';
 
-const PriceChart = () => {
+const PriceChart = (props: PriceChatDataProps) => {
     const options: ApexOptions = {
         chart: {
             id: 'area-datetime',
@@ -356,7 +356,7 @@ const PriceChart = () => {
 
     return (
         <div className='price-chart' style={{ textAlign: "center", height: 465 }}>
-            <p>ETH Machine</p>
+            <p>{props.name}</p>
             <ReactApexChart options={options} series={series} type="area" height="400" width="100%" />
         </div>
     );

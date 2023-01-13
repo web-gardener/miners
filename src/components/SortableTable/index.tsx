@@ -211,7 +211,7 @@ const SortableTable = (props: SortableTablePorps) => {
                                 </Tooltip>
                             </td>
                             <td>
-                                <Tooltip title={`${item.tooltip_status === "" ? item.age : item.tooltip_status}`} placement="top" arrow>
+                                <Tooltip title={`${item.tooltip_status === "" ? getPeriod(item.age) : item.tooltip_status}`} placement="top" arrow>
                                     <Chip label={capitalizeFirstLetter(item.status)} style={{ ...style[item.status] }} />
                                 </Tooltip>
                             </td>
@@ -285,12 +285,12 @@ const SortableTable = (props: SortableTablePorps) => {
                             <td>{getPeriod(item.age)}</td>
                             <td>
                                 <p className={`${item.tvl_24h > 0 ? "positive" : "negative"}`}>
-                                    {item.tvl_24h}%
+                                    {item.tvl_24h < 0 ? item.tvl_24h : '+' + item.tvl_24h}%
                                 </p>
                             </td>
                             <td>
                                 <p className={`${item.tvl_7d > 0 ? "positive" : "negative"}`}>
-                                    {item.tvl_7d}%
+                                    {item.tvl_7d < 0 ? item.tvl_7d : '+' + item.tvl_7d}%
                                 </p>
                             </td>
                         </tr>

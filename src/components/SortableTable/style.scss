@@ -1,5 +1,7 @@
 .sortable-table {
-    border-radius: 50px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    height: 500px;
 
     table {
         width: 100%;
