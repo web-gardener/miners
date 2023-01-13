@@ -8,7 +8,7 @@ import TelegramIcon from '../../../assets/image/telegram-icon.svg';
 import DAppIcon from '../../../assets/image/dapp.png';
 import './style.scss';
 
-const DAppData = () => {
+const DAppData = (props: DAppDataProps) => {
     return (
         <div className="dapp-data">
             <div>
@@ -20,7 +20,7 @@ const DAppData = () => {
                             </IconButton>
                         </a>
                     </Tooltip>
-                    <Typography variant={'h4'} component={'h1'} style={{ color: 'rgb(210, 167, 36)' }}>Green Grower</Typography>
+                    <Typography variant={'h4'} component={'h1'} style={{ color: 'rgb(210, 167, 36)' }}>{props.data.name}</Typography>
                     <Tooltip title="Share this project" placement="left" arrow>
                         <IconButton aria-label="back" style={{ backgroundColor: 'rgb(210, 167, 36)', color: 'white' }}>
                             <ShareIcon />
@@ -35,33 +35,33 @@ const DAppData = () => {
                 <Stack spacing={2} style={{ padding: 20 }}>
                     <Stack direction={"row"} justifyContent={"space-between"}>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Chain:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>POOCHAIN</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.chain}</Typography>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Token:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>POOP</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.token}</Typography>
                     </Stack>
                     <Stack direction={"row"} justifyContent={"space-between"}>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Tvl:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>10,689,158.07</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.tvl}</Typography>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>$Tvl:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>$11,367</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>${props.data.tvl_usd}</Typography>
                     </Stack>
                     <Stack direction={"row"} justifyContent={"space-between"}>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Fees:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>10% / 10%</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.fees}</Typography>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Daily rate:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>10%</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.daily_rate}</Typography>
                     </Stack>
                     <Stack direction={"row"} justifyContent={"space-between"}>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Age:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>20 days</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.age}</Typography>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Audit:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>Yes</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.audit === "Pending" ? "Yes" : "No"}</Typography>
                     </Stack>
                     <Stack direction={"row"} justifyContent={"space-between"}>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Ref:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>10%</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.ref}</Typography>
                         <Typography variant={"h5"} component={"h2"} style={{ color: 'white' }}>Updated:</Typography>
-                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>a min. ago</Typography>
+                        <Typography variant={"h5"} component={"h2"} style={{ color: 'green' }}>{props.data.update}</Typography>
                     </Stack>
                 </Stack>
             </div>
@@ -71,28 +71,28 @@ const DAppData = () => {
             <div className="buttons">
                 <Grid container spacing={2}>
                     <Grid xs={6} md={4} style={{ marginTop: 5 }} display={'flex'} justifyContent={"center"}>
-                        <a className="data-btn" href="https://t.me/GoatMiners">
+                        <a className="data-btn" href={props.data.links.dapp}>
                             <Button variant="contained" endIcon={<img src={DAppIcon} alt="telegram-icon" width={30} height={30} />} style={{ width: 150 }}>
                                 <p>DAPP</p>
                             </Button>
                         </a>
                     </Grid>
                     <Grid xs={6} md={4} style={{ marginTop: 5 }} display={'flex'} justifyContent={"center"}>
-                        <a className="data-btn" href="https://t.me/GoatMiners">
+                        <a className="data-btn" href={props.data.links.contract}>
                             <Button variant="contained" endIcon={<img src={`BSC_CHAIN.png`} alt="telegram-icon" width={30} height={30} />} style={{ width: 150 }}>
                                 <p>CONTRACT</p>
                             </Button>
                         </a>
                     </Grid>
                     <Grid xs={6} md={4} style={{ marginTop: 5 }} display={'flex'} justifyContent={"center"}>
-                        <a className="data-btn" href="https://t.me/GoatMiners">
+                        <a className="data-btn" href={props.data.links.chart}>
                             <Button variant="contained" endIcon={<img src={`BUSD_TOKEN.png`} alt="telegram-icon" width={30} height={30} />} style={{ width: 150 }}>
                                 <p>TOKEN</p>
                             </Button>
                         </a>
                     </Grid>
                     <Grid xs={6} md={12} style={{ marginTop: 5 }} display={'flex'} justifyContent={"center"}>
-                        <a className="data-btn" href="https://t.me/GoatMiners">
+                        <a className="data-btn" href={props.data.links.telegram}>
                             <Button variant="contained" endIcon={<img src={TelegramIcon} alt="telegram-icon" width={30} height={30} />} style={{ width: 150 }}>
                                 <p>TELEGRAM</p>
                             </Button>

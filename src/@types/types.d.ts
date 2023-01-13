@@ -37,3 +37,23 @@ interface SortConfig {
     key: keyof SortableTableData,
     direction: string,
 }
+
+// Detail Page
+
+interface DAppDataProps {
+    data: DAppData
+}
+interface DAppData {
+    name: string,
+    chain: string,
+    token: string,
+    tvl: number,
+    tvl_usd: number,
+    fees: string,
+    daily_rate: string,
+    age: string,
+    audit: string,
+    ref: string,
+    update: string,
+    links: Links,
+}
