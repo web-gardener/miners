@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import SafeIcon from '../../assets/image/safety-icon.webp';
 import UnsafeIcon from '../../assets/image/unsafe-icon.svg';
 import InfoIcon from '../../assets/image/info-icon.svg';
+import { useNavigate } from "react-router-dom";
 import './style.scss';
 
 const tokenLinks = {
@@ -62,6 +63,7 @@ const useSortableData = (items: SortableTableData[], config?: SortConfig) => {
 
 const SortableTable = (props: SortableTablePorps) => {
     const { items, requestSort, sortConfig } = useSortableData(props.products);
+    const navigate = useNavigate();
 
     const getClassNamesFor = (name: string) => {
         if (sortConfig === undefined) {
@@ -96,6 +98,11 @@ const SortableTable = (props: SortableTablePorps) => {
             }
         }
 
+    }
+
+    const handleClickName = (name: string) => {
+        localStorage.setItem('name', name);
+        navigate("detail");
     }
 
     return (
@@ -207,7 +214,7 @@ const SortableTable = (props: SortableTablePorps) => {
                         <tr key={item.id}>
                             <td>
                                 <Tooltip title="Click for more info" placement="top" arrow>
-                                    <Button style={{ color: 'black', minWidth: '0' }}>{item.name}</Button>
+                                    <Button style={{ color: 'black', minWidth: '0' }} onClick={() => handleClickName(item.name)}>{item.name}</Button>
                                 </Tooltip>
                             </td>
                             <td>
