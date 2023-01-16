@@ -207,6 +207,9 @@ const SortableTable = (props: SortableTablePorps) => {
                                 {(getClassNamesFor('tvl_7d') === "descending" || getClassNamesFor('tvl_7d') === undefined) && "↓"}
                             </button>
                         </th>
+                        <th>
+                            Last 7d
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -299,6 +302,8 @@ const SortableTable = (props: SortableTablePorps) => {
                                 <p className={`${item.tvl_7d > 0 ? "positive" : "negative"}`}>
                                     {item.tvl_7d < 0 ? item.tvl_7d : '+' + item.tvl_7d}%
                                 </p>
+                            </td>
+                            <td>
                             </td>
                         </tr>
                     ))}

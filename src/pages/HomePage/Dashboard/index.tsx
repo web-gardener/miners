@@ -44,7 +44,7 @@ const Dashboard = () => {
                 return "over";
             case "Scam#d32f2f":
                 return "scam";
-            case "Avoid#d34f2f":
+            case "Avoid#d32f2f":
                 return "avoid";
             default:
                 return isNew(age) ? "new" : "active";
